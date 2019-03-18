@@ -53,7 +53,7 @@ class Layer(object):
       for n2 in layer.neurons:
         n.connect(n2)
   def set_activations(self, activations):
-    for i in range(len(activations)): 
+    for i in range(len(activations)-1): 
       self.neurons[i].activation = sigmoid(activations[i])
   def get_activations(self):
     activations = []
