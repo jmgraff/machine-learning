@@ -43,6 +43,7 @@ class Neuron(object):
       c.neuron.error += self.delta * c.weight
       c.weight -= change * learning_rate
     self.last_error = self.error
+#    import pdb; pdb.set_trace()
     self.error = 0.0
       
 class Layer(object):
@@ -53,8 +54,8 @@ class Layer(object):
       for n2 in layer.neurons:
         n.connect(n2)
   def set_activations(self, activations):
-    for i in range(len(activations)-1): 
-      self.neurons[i].activation = sigmoid(activations[i])
+    for i in range(len(activations)): 
+      self.neurons[i].activation = activations[i]
   def get_activations(self):
     activations = []
     for neuron in self.neurons:

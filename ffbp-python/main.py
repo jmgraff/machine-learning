@@ -7,7 +7,7 @@ def query(n, x):
 if __name__ == '__main__':
   print "Creating network"
 
-  n = Network([1,3,1])
+  n = Network([2,3,1])
 
   training_data = [
     [[0,0],[0]],
@@ -16,10 +16,9 @@ if __name__ == '__main__':
     [[1,1],[0]],
   ]
 
-  n.train(training_data, 100000, 0.2, 100000)
+  n.train(training_data, 50000, 0.2, 1000)
 
   for datum in training_data:
-    #import pdb; pdb.set_trace()
     print "[%i,%i]: %f" % (datum[0][0], datum[0][1], n.query(datum[0])[0])
 
   print "Done."
